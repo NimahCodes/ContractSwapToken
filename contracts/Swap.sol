@@ -1,11 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-// Import this file to use console.log
-import "hardhat/console.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-
-contract TokenSwap {
+contract ContractSwap {
     IERC20 public token1;
     address public owner1;
     uint public amount1;
@@ -52,15 +50,5 @@ contract TokenSwap {
     ) private {
         bool sent = token.transferFrom(sender, recipient, amount);
         require(sent, "Token transfer failed");
-    }
-}
-[6:57 pm, 17/08/2022] Abiodun AWOYEMI: // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
-
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-
-contract LinkToken is ERC20 {
-    constructor() ERC20("LinkToken", "LNK") {
-        _mint(_msgSender(), 10000e18);
     }
 }
